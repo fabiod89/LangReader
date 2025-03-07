@@ -109,6 +109,5 @@ app.get('/logout', (req, res) => {
   });
 });
 
-// Start server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Export the app for Vercel to use as a serverless function
+module.exports = app;
