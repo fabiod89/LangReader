@@ -201,7 +201,7 @@ a:focus {
   }
 
   .nav-icons {
-    gap: 10px; /* Reduce spacing between icons */
+    gap: 35px; /* Increased spacing between icons */
   }
 
   .nav-icon {
