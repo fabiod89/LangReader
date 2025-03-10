@@ -81,27 +81,11 @@ app.get('/profile', (req, res) => {
   });
 });
 
-app.get('/decks', (req, res) => {
+app.get('/about', (req, res) => {
   res.render('layout', {
-    title: 'Decks',
+    title: 'About',
     user: req.user,
-    body: 'decks' // Render the decks.ejs file
-  });
-});
-
-app.get('/story', (req, res) => {
-  res.render('layout', {
-    title: 'Story',
-    user: req.user,
-    body: 'story' // Render the story.ejs file
-  });
-});
-
-app.get('/dictionary', (req, res) => {
-  res.render('layout', {
-    title: 'Dictionary',
-    user: req.user,
-    body: 'dictionary' // Render the dictionary.ejs file
+    body: 'about' // Render the about.ejs file
   });
 });
 
@@ -124,14 +108,6 @@ app.get('/logout', (req, res) => {
     req.session.destroy(() => res.redirect('/'));
   });
 });
-
-// Start the server for local development
-if (process.env.NODE_ENV !== 'production') {
-  const PORT = process.env.PORT || 3000;
-  app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-  });
-}
 
 // Export the app for Vercel to use as a serverless function
 module.exports = app;

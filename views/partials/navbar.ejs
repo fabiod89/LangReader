@@ -1,18 +1,32 @@
+<!-- views/partials/navbar.ejs -->
 <nav class="navbar">
-  <div>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <% if (user) { %>
-      <a href="/profile">Profile</a>
-    <% } %>
+  <div class="nav-icons">
+    <a href="/" class="nav-icon">
+      <img src="/assets/home-icon.png" alt="Home">
+      <span class="nav-text">Home</span>
+    </a>
+    <a href="/decks" class="nav-icon">
+      <img src="/assets/decks-icon.png" alt="Decks">
+      <span class="nav-text">Decks</span>
+    </a>
+    <a href="/story" class="nav-icon">
+      <img src="/assets/story-icon.png" alt="Story">
+      <span class="nav-text">Story</span>
+    </a>
+    <a href="/dictionary" class="nav-icon">
+      <img src="/assets/dictionary-icon.png" alt="Dictionary">
+      <span class="nav-text">Dictionary</span>
+    </a>
   </div>
-  <div>
-    <% if (user) { %>
-      <img src="<%= user.photos[0].value %>" class="profile-pic">
-      <a href="/auth/google?prompt=select_account">Switch Account</a>
+  <% if (user) { %>
+    <div class="profile-section">
+      <img src="<%= user.photos[0].value %>" alt="Profile" class="profile-pic">
       <a href="/logout">Logout</a>
-    <% } else { %>
-      <a href="/auth/google?prompt=select_account">Login</a>
-    <% } %>
-  </div>
+    </div>
+  <% } else { %>
+    <a href="/auth/google" class="login-button">
+      <span class="login-text">Login with Google</span>
+      <img src="/assets/google-icon.png" alt="Google" class="google-icon">
+    </a>
+  <% } %>
 </nav>
