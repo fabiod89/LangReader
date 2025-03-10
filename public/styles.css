@@ -201,7 +201,7 @@ a:focus {
   }
 
   .nav-icons {
-    gap: 20px; /* Increased spacing between icons */
+    gap: 30px; /* Increased spacing between icons */
   }
 
   .nav-icon {
@@ -216,8 +216,8 @@ a:focus {
   }
 
   .profile-pic {
-    width: 30px; /* Smaller profile picture */
-    height: 30px;
+    width: 50px; /* Smaller profile picture */
+    height: 50px;
   }
 
   .login-button {
